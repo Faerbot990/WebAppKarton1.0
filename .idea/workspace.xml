@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:github" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:github1" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:github12" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:github123" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin3" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="1ebf1cf8-1a39-4d71-ad6f-22f41d57cecb" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../Game-2048/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game-2048/gradle.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game-2048/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game-2048/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game-2048/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game-2048/src/main/java/game/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game-2048/src/main/java/game/graphics/GraphicsModule.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game-2048/src/main/java/game/graphics/LwjglGraphicsModule.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game-2048/src/main/java/game/graphics/LwjglSprite.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game-2048/src/main/java/game/graphics/LwjglSpriteSystem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game-2048/src/main/java/game/keyboard/KeyboardHandleModule.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game-2048/src/main/java/game/keyboard/LwjglKeyboardHandleModule.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game-2048/src/main/java/game/main/Constants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game-2048/src/main/java/game/main/Direction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game-2048/src/main/java/game/main/ErrorCatcher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game-2048/src/main/java/game/main/GameField.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game-2048/src/main/resources/texture/1024.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game-2048/src/main/resources/texture/128.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game-2048/src/main/resources/texture/16.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game-2048/src/main/resources/texture/2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game-2048/src/main/resources/texture/2048.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game-2048/src/main/resources/texture/256.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game-2048/src/main/resources/texture/32.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game-2048/src/main/resources/texture/4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game-2048/src/main/resources/texture/512.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game-2048/src/main/resources/texture/64.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game-2048/src/main/resources/texture/8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game-2048/src/main/resources/texture/empty.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game2048/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game2048/src/main/java/App2048.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game2048/src/main/java/Board.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game2048/src/main/java/Cell.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game2048/src/main/java/Computer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game2048/src/main/java/Human.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Game2048/src/main/java/enums/Move.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Karton(WebApp)/src/main/resources/TopKarton (new)/adm_login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Karton(WebApp)/src/main/resources/TopKarton (new)/admin_panel.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Karton(WebApp)/src/main/resources/TopKarton (new)/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Karton(WebApp)/src/main/resources/TopKarton (new)/favicon.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Karton(WebApp)/src/main/resources/TopKarton (new)/images/checked.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Karton(WebApp)/src/main/resources/TopKarton (new)/images/close.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Karton(WebApp)/src/main/resources/TopKarton (new)/images/delete.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Karton(WebApp)/src/main/resources/TopKarton (new)/images/logo.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Karton(WebApp)/src/main/resources/TopKarton (new)/images/prod.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Karton(WebApp)/src/main/resources/TopKarton (new)/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Karton(WebApp)/src/main/resources/TopKarton (new)/js/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Telegram-bot1.0/src/main/java/Bot.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Telegram-bot1.0/src/main/java/Model.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Telegram-bot1.0/src/main/java/Weather.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Telegram-bot1.0/src/main/resources/JSON" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/aws.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebAppKarton.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/karton/config/JwtFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/karton/config/JwtProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/karton/config/SpringFoxConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/karton/config/WebSecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/karton/controller/AdminController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/karton/controller/AuthController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/karton/dto/UserDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/karton/model/Good.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/karton/model/GoodCategory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/karton/model/Role.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/karton/model/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/karton/model/Views.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/karton/repository/GoodRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/karton/repository/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/karton/service/GoodService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/karton/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/database.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/migration/V1__DB_Init.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/migration/V2__Add_demo_values.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/migration/V3__Users_update.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Telegram-bot/src/main/java/service/impl/FakeWeatherServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Telegram-bot/src/main/java/service/impl/WeatherServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Telegram-bot/src/main/java/service/impl/WeatherServiceImpl.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="SYNC" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2020.2.3\plugins\maven\lib\maven3" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
+  <component name="ProjectId" id="1kf4odav4SL5Wh99oG58COTlYE0" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="abbreviatePackageNames" value="true" />
+    <option name="flattenPackages" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showVisibilityIcons" value="true" />
+    <option name="sortByType" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="add_unversioned_files" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Problems" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="net.karton.config" />
+      <recent name="net.karton.model" />
+      <recent name="net.karton.repository" />
+      <recent name="net.karton.service" />
+      <recent name="net.karton.controller" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\WebAppKarton\src\main\resources" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1ebf1cf8-1a39-4d71-ad6f-22f41d57cecb" name="Default Changelist" comment="" />
+      <created>1606078489970</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1606078489970</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1193" y="193" key="#com.intellij.ide.util.MemberChooser" timestamp="1606087386027">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1193" y="193" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1606087386027" />
+    <state x="490" y="174" key="DBNavigator.ProjectSettingsDialog" timestamp="1606122722441">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="490" y="174" key="DBNavigator.ProjectSettingsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1606122722441" />
+    <state x="184" y="86" key="DiffContextDialog" timestamp="1606244834957">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="184" y="86" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1606244834957" />
+    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1606245066435">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1606245066435" />
+    <state x="490" y="174" key="Maven.ArtifactSearchDialog" timestamp="1606087735138">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="490" y="174" key="Maven.ArtifactSearchDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1606087735138" />
+    <state x="715" y="222" key="RollbackChangesDialog" timestamp="1606244838345">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="715" y="222" key="RollbackChangesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1606244838345" />
+    <state x="440" y="94" key="SettingsEditor" timestamp="1606247055620">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="440" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1606247055620" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1606244887586">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1606244887586" />
+    <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1606247056194">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1606247056194" />
+    <state x="804" y="253" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1606246999278">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="804" y="253" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1606246999278" />
+    <state x="777" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606244863817">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="777" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1606244863817" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1606244573889">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1606244573889" />
+  </component>
+</project>
