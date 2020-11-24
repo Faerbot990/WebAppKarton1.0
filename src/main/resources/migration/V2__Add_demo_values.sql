@@ -1,4 +1,4 @@
-insert into movie (id, name, category, description) values
+insert into goods (id, name, category, description) values
     ( 1,  'title', 'category', 'descriprion'),
     ( 2,  'title', 'category', 'descriprion'),
     ( 3,  'title', 'category', 'descriprion'),
