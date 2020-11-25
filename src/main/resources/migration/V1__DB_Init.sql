@@ -7,7 +7,7 @@ CREATE TABLE goods (
 );
 CREATE TABLE categories (
     category_id INT NOT NULL GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    category_name VARCHAR(100) NOT NULL
+    category_name VARCHAR(255) NOT NULL
 );
 
 create table user (
