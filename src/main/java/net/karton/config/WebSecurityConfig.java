@@ -1,50 +1,57 @@
 package net.karton.config;
 
-import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
-import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
-import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @Configuration
-@RequiredArgsConstructor
-@EnableGlobalMethodSecurity(
-        prePostEnabled = true,
-        securedEnabled = true,
-        jsr250Enabled = true)
-@EnableSwagger2
+@EnableWebSecurity
+@EnableGlobalMethodSecurity(prePostEnabled = true)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
-    private final JwtFilter jwtFilter;
-
-    @Bean
-    @Override
-    public AuthenticationManager authenticationManagerBean() throws Exception {
-        return super.authenticationManagerBean();
+    private final JwtConfig jwtConfig;
+    @Autowired
+    public WebSecurityConfig(JwtConfig jwtConfig) {
+        this.jwtConfig = jwtConfig;
     }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
-                .httpBasic()
-                    .disable()
                 .csrf()
-                    .disable()
-                .sessionManagement()
-                    .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+                .disable()
+                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
                 .authorizeRequests()
-                    .antMatchers("/auth", "/good/*")
-                        .permitAll()
-                    .antMatchers("/v2/api-docs", "/configuration/**", "/swagger*/**", "/webjars/**")
-                        .permitAll()
-                    .anyRequest().authenticated()
+                .antMatchers("/api/v1/rest",
+                        "/api/v1/rest/product/*",
+                        "/api/v1/rest/admin/*",
+                        "/api/v1/rest/admin/user/*",
+                        "/api/v1/rest/menu/**",
+                        "/api/v1/rest/cart",
+                        "/api/v1/rest/cart/*",
+                        "/api/v1/rest/order",
+                        "/api/v1/rest/order/*",
+                        "/api/v1/rest/user/*",
+                        "/img/**",
+                        "/static/**",
+                        "/menu/**").permitAll()
+                .antMatchers("/api/v1/rest/login").permitAll()
+                .anyRequest()
+                .authenticated()
                 .and()
-                .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
+                .apply(jwtConfig);
+    }
+
+    @Bean
+    @Override
+    public AuthenticationManager authenticationManagerBean() throws Exception {
+        return super.authenticationManagerBean();
     }
 }

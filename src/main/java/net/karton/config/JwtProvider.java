@@ -37,6 +37,7 @@ public class JwtProvider {
     protected void init(){
         secretKey = Base64.getEncoder().encodeToString(secretKey.getBytes());
     }
+
     public String createToken(String username, String role) {
         Claims claims = Jwts.claims().setSubject(username);
         claims.put("role", role);
@@ -51,12 +52,12 @@ public class JwtProvider {
                 .compact();
     }
 
-    public boolean validateToken(String token) {
+    public boolean validateToken(String token) throws JwtAuthException {
         try {
             Jws<Claims> claimsJws = Jwts.parser().setSigningKey(secretKey).parseClaimsJws(token);
 
             return !claimsJws.getBody().getExpiration().before(new Date());
-        } catch (JwtAuthException | IllegalArgumentException e) {
+        } catch (IllegalArgumentException e) {
             throw new JwtAuthException("JWT token is expired or invalid", HttpStatus.UNAUTHORIZED);
         }
     }

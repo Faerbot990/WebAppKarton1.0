@@ -1,31 +1,46 @@
 package net.karton.config;
 
 
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
+import org.springframework.web.filter.GenericFilterBean;
+
+import javax.servlet.FilterChain;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
 @Component
+public class JwtFilter extends GenericFilterBean {
 
-public class JwtFilter {
-
-    private final UserService userService;
-
+    private final JwtProvider jwtProvider;
+@Autowired
+    public JwtFilter(JwtProvider jwtProvider) {
+        this.jwtProvider = jwtProvider;
+    }
 
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
-        String token = getTokenFromRequest((HttpServletRequest) servletRequest);
-        if (token != null && jwtProvider.validateToken(token)) {
-            String username = jwtProvider.extractUsername(token);
-            User user = (User) userService.loadUserByUsername(username);
-            UsernamePasswordAuthenticationToken auth = new UsernamePasswordAuthenticationToken(user, null, user.getAuthorities());
-            SecurityContextHolder.getContext().setAuthentication(auth);
+        String token = jwtProvider.resolveToken((HttpServletRequest) servletRequest);
+
+        try {
+            if (token != null && jwtProvider.validateToken(token)) {
+                Authentication authentication = jwtProvider.getAuthentication(token);
+                if (authentication != null) {
+                    SecurityContextHolder.getContext().setAuthentication(authentication);
+                }
+            }
+        }catch (JwtAuthException e){
+            SecurityContextHolder.clearContext();
+            ((HttpServletResponse) servletResponse).sendError(e.getHttpStatus().value());
+            throw new JwtAuthException("JWT token invalid");
         }
         filterChain.doFilter(servletRequest, servletResponse);
     }
 
-    private String getTokenFromRequest(HttpServletRequest request) {
-        String bearer = request.getHeader("Authorization");
-        if (hasText(bearer) && bearer.startsWith("Bearer ")) {
-            return bearer.substring(7);
-        }
-        return bearer;
-    }
 }
