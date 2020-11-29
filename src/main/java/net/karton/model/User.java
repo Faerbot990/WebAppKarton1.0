@@ -1,22 +1,36 @@
 package net.karton.model;
 
-import com.fasterxml.jackson.annotation.JsonView;
-import lombok.Data;
-import org.glassfish.jersey.internal.util.collection.Views;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 import java.util.Collection;
+import java.util.List;
 import java.util.Set;
 
-@Data
 @Entity
+@Table(name = "user")
+@Getter
+@Setter
+@NoArgsConstructor
+@EqualsAndHashCode(of = {"id", "username","password"})
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class User implements UserDetails {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
+    @NotBlank(message = " ")
     private String username;
+
+    @NotBlank(message = " ")
     private String password;
 
     @ElementCollection(targetClass = Role.class, fetch = FetchType.EAGER)
@@ -24,28 +38,31 @@ public class User implements UserDetails {
     @Enumerated(EnumType.STRING)
     private Set<Role> roles;
 
-    @Override
-    protected Object clone() throws CloneNotSupportedException {
-        return super.clone();
-    }
+    @ManyToMany(fetch = FetchType.EAGER)
+    private List<Product> productList;
 
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
+    public boolean isAdmin() {
+        return roles.contains(Role.ROLE_ADMIN);
     }
 
     public boolean isAccountNonExpired() {
-        return false;
+        return true;
     }
 
     public boolean isAccountNonLocked() {
-        return false;
+        return true;
     }
 
     public boolean isCredentialsNonExpired() {
-        return false;
+        return true;
     }
 
     public boolean isEnabled() {
-        return false;
+        return isActive;
+    }
+
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return getRoles();
     }
 }

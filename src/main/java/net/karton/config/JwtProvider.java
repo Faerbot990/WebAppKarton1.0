@@ -2,58 +2,75 @@ package net.karton.config;
 
 
 import io.jsonwebtoken.*;
-import lombok.extern.java.Log;
-import net.karton.model.User;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpStatus;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
+import javax.servlet.http.HttpServletRequest;
+import java.util.Base64;
 import java.util.Date;
-import java.util.HashMap;
 
 @Component
-@Log
 public class JwtProvider {
 
-    @Value("$(jwt.secret)")
-    private String secret;
-    @Value("${jwt.expiration}")
-    private String expirationTime;
+    private final UserDetailsService userDetailsService;
 
-    public String generateToken(User user) {
-        HashMap<String, Object> claims = new HashMap<>();
-        claims.put("role", user.getRoles());
-        long expirationSeconds = Long.parseLong(expirationTime);
-        Date creationDate = new Date();
-        Date expirationDate = new Date(creationDate.getTime() + expirationSeconds * 1000);
+    @Value("$(jwt.header)")
+    private String authorizationHeader;
+    @Value("${jwt.secret}")
+    private String secretKey;
+    @Value("${jwt.expiration}")
+    private long validityInMilliseconds;
+
+    @Autowired
+    public JwtProvider(Qualifier("userDelaisServiceImpl") UserDetailService userDetailService){
+        this.userDetailsService = userDetailsService;
+    }
+    @PostConstruct
+    protected void init(){
+        secretKey = Base64.getEncoder().encodeToString(secretKey.getBytes());
+    }
+    public String createToken(String username, String role) {
+        Claims claims = Jwts.claims().setSubject(username);
+        claims.put("role", role);
+        Date now = new Date();
+        Date validator = new Date(now.getTime() + validityInMilliseconds * 1000);
+
         return Jwts.builder()
                 .setClaims(claims)
-                .setSubject(user.getUsername())
-                .setIssuedAt(creationDate)
-                .setExpiration(expirationDate)
-                .signWith(SignatureAlgorithm.HS512, secret)
+                .setIssuedAt(now)
+                .setExpiration(validator)
+                .signWith(SignatureAlgorithm.ES256, secretKey)
                 .compact();
-    }
-
-    public String extractUsername(String token) {
-        Claims claims = Jwts.parser().setSigningKey(secret).parseClaimsJws(token).getBody();
-        return claims.getSubject();
     }
 
     public boolean validateToken(String token) {
         try {
-            Jwts.parser().setSigningKey(secret).parseClaimsJws(token);
-            return true;
-        } catch (ExpiredJwtException expEx) {
-            log.severe("Token expired");
-        } catch (UnsupportedJwtException unsEx) {
-            log.severe("Unsupported jwt");
-        } catch (MalformedJwtException mjEx) {
-            log.severe("Malformed jwt");
-        } catch (SignatureException sEx) {
-            log.severe("Invalid signature");
-        } catch (Exception e) {
-            log.severe("invalid token");
+            Jws<Claims> claimsJws = Jwts.parser().setSigningKey(secretKey).parseClaimsJws(token);
+
+            return !claimsJws.getBody().getExpiration().before(new Date());
+        } catch (JwtAuthException | IllegalArgumentException e) {
+            throw new JwtAuthException("JWT token is expired or invalid", HttpStatus.UNAUTHORIZED);
         }
-        return false;
+    }
+
+    public Authentication getAuthentication(String token) {
+        UserDetails userDetails = this.userDetailsService.loadUserByUsername(getUsername(token));
+        return new UsernamePasswordAuthenticationToken(userDetails, "", userDetails.getAuthorities());
+    }
+
+    public String getUsername(String token) {
+        return Jwts.parser().setSigningKey(secretKey).parseClaimsJws(token).getBody().getSubject();
+    }
+
+    public String resolveToken(HttpServletRequest request) {
+        return request.getHeader(authorizationHeader);
     }
 }

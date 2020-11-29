@@ -1,26 +1,26 @@
 package net.karton.service;
 
-
-import lombok.RequiredArgsConstructor;
 import net.karton.model.User;
-import net.karton.repository.UserRepository;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.stereotype.Service;
 
-@Service
-@RequiredArgsConstructor
-public class UserService implements UserDetailsService {
+import java.util.List;
+import java.util.Map;
 
-    private final UserRepository userRepository;
+public interface UserService {
+    User getOne(Long id);
 
+    User findByEmail(String email);
 
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        User user = userRepository.findByUsername(username);
-        if (user == null) {
-            throw new UsernameNotFoundException(" ");
-        }
-        return user;
-    }
+    boolean addUser(User user);
+
+    void sendMessage(User user);
+
+    List<User> findAll();
+
+    void userSave(String username, Map<String, String> form, User user);
+
+    void updateProfile(User user, String password);
+
+    User findByUsername(String username);
+
+    User save(User user);
 }
