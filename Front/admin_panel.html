@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Продажа картонной упаковки: коробки из картона любых размеров, гофротара, гофроящики, гофрокороба. Большой выбор, низкие цены.">
+	<title>Админка</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="shortcut icon" href="favicon.svg" type="image/x-icon">
+	<link rel="icon" href="favicon.svg" type="image/x-icon">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="admin_page">
+	<div class="head_container">
+		<div class="logo"><img src="images/logo.svg"></div>
+		<div class="menu">
+			<span data-id="prods" class="active">Товары</span>
+			<span data-id="categories">Категории</span>
+			<span data-id="orders">Заказы</span>
+			<span data-id="settings">Настройки</span>
+		</div>
+	</div>
+	<div class="adm_content" data-id="prods">
+		<h2>Товары:</h2>
+		<div class="prod_head_wrap flx">
+			<div class="wrap">
+				<a href="/"><div class="btn add">Добавить товар</div></a>
+				<span class="btn">Удалить</span>
+			</div>
+			<form>
+				<input type="text" name="search" placeholder="Поиск по товарам">
+				<div class="btn">Поиск</div>
+			</form>
+		</div>
+		<div class="prod_table">
+			<table>
+				<thead>
+					<tr>
+						<td>
+							<label>
+								<input type="checkbox">
+								<span></span>
+							</label>
+						</td>
+						<td>Изображение</td>
+						<td>Название товара</td>
+						<td>Цена</td>
+						<td>Категории</td>
+						<td>Дата</td>
+						<td></td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<label>
+								<input type="checkbox">
+								<span></span>
+							</label>
+						</td>
+						<td>
+							<img src="images/prod.jpg" class="prod_img">
+						</td>
+						<td>Короб с ручками 630х320х340</td>
+						<td>Цена за упаковку 25.40₽</td>
+						<td>Коробки из гофрокартона, Четырехклапанные</td>
+						<td>Опубликовано 05.06.2020</td>
+						<td>
+							<img src="images/delete.svg">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>
+								<input type="checkbox">
+								<span></span>
+							</label>
+						</td>
+						<td>
+							<img src="images/prod.jpg" class="prod_img">
+						</td>
+						<td>Короб 515х225х150</td>
+						<td>Цена за упаковку 25.40₽</td>
+						<td>Коробки из гофрокартона, Четырехклапанные</td>
+						<td>Опубликовано 05.06.2020</td>
+						<td>
+							<img src="images/delete.svg">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>
+								<input type="checkbox">
+								<span></span>
+							</label>
+						</td>
+						<td>
+							<img src="images/prod.jpg" class="prod_img">
+						</td>
+						<td>Короб 515х225х150</td>
+						<td>Цена за упаковку 25.40₽</td>
+						<td>Коробки из гофрокартона, Четырехклапанные</td>
+						<td>Опубликовано 05.06.2020</td>
+						<td>
+							<img src="images/delete.svg">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>
+								<input type="checkbox">
+								<span></span>
+							</label>
+						</td>
+						<td>
+							<img src="images/prod.jpg" class="prod_img">
+						</td>
+						<td>Короб 515х225х150</td>
+						<td>Цена за упаковку 25.40₽</td>
+						<td>Коробки из гофрокартона, Четырехклапанные</td>
+						<td>Опубликовано 05.06.2020</td>
+						<td>
+							<img src="images/delete.svg">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>
+								<input type="checkbox">
+								<span></span>
+							</label>
+						</td>
+						<td>
+							<img src="images/prod.jpg" class="prod_img">
+						</td>
+						<td>Короб 515х225х150</td>
+						<td>Цена за упаковку 25.40₽</td>
+						<td>Коробки из гофрокартона, Четырехклапанные</td>
+						<td>Опубликовано 05.06.2020</td>
+						<td>
+							<img src="images/delete.svg">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>
+								<input type="checkbox">
+								<span></span>
+							</label>
+						</td>
+						<td>
+							<img src="images/prod.jpg" class="prod_img">
+						</td>
+						<td>Короб 515х225х150</td>
+						<td>Цена за упаковку 25.40₽</td>
+						<td>Коробки из гофрокартона, Четырехклапанные</td>
+						<td>Опубликовано 05.06.2020</td>
+						<td>
+							<img src="images/delete.svg">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>
+								<input type="checkbox">
+								<span></span>
+							</label>
+						</td>
+						<td>
+							<img src="images/prod.jpg" class="prod_img">
+						</td>
+						<td>Короб 515х225х150</td>
+						<td>Цена за упаковку 25.40₽</td>
+						<td>Коробки из гофрокартона, Четырехклапанные</td>
+						<td>Опубликовано 05.06.2020</td>
+						<td>
+							<img src="images/delete.svg">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>
+								<input type="checkbox">
+								<span></span>
+							</label>
+						</td>
+						<td>
+							<img src="images/prod.jpg" class="prod_img">
+						</td>
+						<td>Короб 515х225х150</td>
+						<td>Цена за упаковку 25.40₽</td>
+						<td>Коробки из гофрокартона, Четырехклапанные</td>
+						<td>Опубликовано 05.06.2020</td>
+						<td>
+							<img src="images/delete.svg">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>
+								<input type="checkbox">
+								<span></span>
+							</label>
+						</td>
+						<td>
+							<img src="images/prod.jpg" class="prod_img">
+						</td>
+						<td>Короб 515х225х150</td>
+						<td>Цена за упаковку 25.40₽</td>
+						<td>Коробки из гофрокартона, Четырехклапанные</td>
+						<td>Опубликовано 05.06.2020</td>
+						<td>
+							<img src="images/delete.svg">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>
+								<input type="checkbox">
+								<span></span>
+							</label>
+						</td>
+						<td>
+							<img src="images/prod.jpg" class="prod_img">
+						</td>
+						<td>Короб 515х225х150</td>
+						<td>Цена за упаковку 25.40₽</td>
+						<td>Коробки из гофрокартона, Четырехклапанные</td>
+						<td>Опубликовано 05.06.2020</td>
+						<td>
+							<img src="images/delete.svg">
+						</td>
+					</tr>					
+				</tbody>
+			</table>
+			<div class="pagination flx">
+				<div class="item active">1</div>
+				<div class="item">2</div>
+				<div class="item">3</div>
+				...
+				<div class="item">50</div>
+			</div>
+		</div>
+	</div>
+	<div class="adm_content" data-id="categories">
+		<h2>Категории товаров:</h2>
+		<div class="categories_box flx">
+			<div class="add_category">
+				<h3>Добавить категорию</h3>
+				<form>
+					<p>Название новой категории</p>
+					<input type="text">
+					<p>Родительская категория</p>
+					<select>
+						<option value="Нет">Нет</option>
+						<option value="Картон">Картон</option>
+					</select>
+					<button class="btn add">Добавить категорию</button>
+				</form>
+			</div>
+			<div class="categories_list">
+				<div class="btn delete_category">Удалить категорию</div>
+				<table>
+					<thead>
+						<tr>
+							<td>
+								<label>
+									<input type="checkbox">
+									<span></span>
+								</label>
+							</td>
+							<td>Название категории</td>
+							<td>Количество товаров</td>
+							<td></td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>
+								<label>
+									<input type="checkbox">
+									<span></span>
+								</label>
+							</td>
+							<td>Бумажные пакеты</td>
+							<td>10</td>
+							<td>
+								<img src="images/delete.svg">
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label>
+									<input type="checkbox">
+									<span></span>
+								</label>
+							</td>
+							<td>Бумажные пакеты</td>
+							<td>10</td>
+							<td>
+								<img src="images/delete.svg">
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label>
+									<input type="checkbox">
+									<span></span>
+								</label>
+							</td>
+							<td>Бумажные пакеты</td>
+							<td>10</td>
+							<td>
+								<img src="images/delete.svg">
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label>
+									<input type="checkbox">
+									<span></span>
+								</label>
+							</td>
+							<td>Бумажные пакеты</td>
+							<td>10</td>
+							<td>
+								<img src="images/delete.svg">
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label>
+									<input type="checkbox">
+									<span></span>
+								</label>
+							</td>
+							<td>Бумажные пакеты</td>
+							<td>10</td>
+							<td>
+								<img src="images/delete.svg">
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="pagination flx">
+					<div class="item active">1</div>
+					<div class="item">2</div>
+					<div class="item">3</div>
+					...
+				<div class="item">50</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="adm_content" data-id="orders">
+		<h2>Заказы:</h2>
+		<div class="btn">Удалить</div>
+		<table class="order_table">
+			<thead>
+				<tr>
+					<td>
+						<label>
+							<input type="checkbox">
+							<span></span>
+						</label>
+					</td>
+					<td>id заказа</td>
+					<td>контакты заказчика</td>
+					<td>товары в заказе</td>
+					<td>сумма</td>
+					<td>статус</td>
+					<td></td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class="success">
+					<td>
+						<label>
+							<input type="checkbox">
+							<span></span>
+						</label>
+					</td>
+					<td>123</td>
+					<td>Самковский Станислав <br><a href="tel:+38(077)777-77-77">+38(077)777-77-77</a><br> <a href="mailto:samkovsky@gmail.com">samkovsky@gmail.com</a></td>
+					<td>Гофро-картон 50шт, стаканчики 50шт</td>
+					<td>1200 руб.</td>
+					<td>
+						<select>
+							<option value="Успешен">Успешен</option>
+							<option value="Принят">Принят</option>
+							<option value="Выполняется">Выполняется</option>
+							<option value="Отправлено">Отправлено</option>
+							<option value="Отменен">Отменен</option>
+						</select>
+					</td>
+					<td>
+						<img src="images/delete.svg">
+					</td>
+				</tr>
+				<tr class="failed">
+					<td>
+						<label>
+							<input type="checkbox">
+							<span></span>
+						</label>
+					</td>
+					<td>123</td>
+					<td>Самковский Станислав <br><a href="tel:+38(077)777-77-77">+38(077)777-77-77</a><br> <a href="mailto:samkovsky@gmail.com">samkovsky@gmail.com</a></td>
+					<td>Гофро-картон 50шт, стаканчики 50шт</td>
+					<td>1200 руб.</td>
+					<td>
+						<select>
+							<option value="Отменен">Отменен</option>
+							<option value="Принят">Принят</option>
+							<option value="Выполняется">Выполняется</option>
+							<option value="Отправлено">Отправлено</option>
+							<option value="Успешен">Успешен</option>
+						</select>
+					</td>
+					<td>
+						<img src="images/delete.svg">
+					</td>
+				</tr>
+				<tr class="pending">
+					<td>
+						<label>
+							<input type="checkbox">
+							<span></span>
+						</label>
+					</td>
+					<td>123</td>
+					<td>Самковский Станислав <br><a href="tel:+38(077)777-77-77">+38(077)777-77-77</a><br> <a href="mailto:samkovsky@gmail.com">samkovsky@gmail.com</a></td>
+					<td>Гофро-картон 50шт, стаканчики 50шт</td>
+					<td>1200 руб.</td>
+					<td>
+						<select>
+							<option value="Выполняется">Выполняется</option>
+							<option value="Принят">Принят</option>
+							<option value="Отправлено">Отправлено</option>
+							<option value="Отменен">Отменен</option>
+							<option value="Успешен">Успешен</option>
+						</select>
+					</td>
+					<td>
+						<img src="images/delete.svg">
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="pagination flx">
+			<div class="item active">1</div>
+			<div class="item">2</div>
+			<div class="item">3</div>
+			...
+			<div class="item">50</div>
+		</div>
+	</div>
+	<div class="adm_content" data-id="settings">
+		<h2>Настройки пользователей:</h2>
+		<table class="settings_table">
+			<thead>
+				<tr>
+					<td>
+						<label>
+							<input type="checkbox">
+							<span></span>
+						</label>
+					</td>
+					<td>пользователь</td>
+					<td>роль</td>
+					<td>логин</td>
+					<td>пароль</td>
+					<td></td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						<label>
+							<input type="checkbox">
+							<span></span>
+						</label>
+					</td>
+					<td>Samkovsky</td>
+					<td>менеджер по продажам</td>
+					<td>samkovsky</td>
+					<td>***********</td>
+					<td>
+						<img src="images/delete.svg">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>
+							<input type="checkbox">
+							<span></span>
+						</label>
+					</td>
+					<td>Samkovsky</td>
+					<td>менеджер по контенту</td>
+					<td>samkovsky</td>
+					<td>***********</td>
+					<td>
+						<img src="images/delete.svg">
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<h2>Настройки для телеграмм:</h2>
+		<h2>Почта для получения заказов:</h2>
+	</div>
+	<div class="adm_content active" data-id="prod_page">
+		<h2>Добавление/редактирование товара:</h2>
+		<form>
+			<button class="btn add">Добавить/Изменить</button>
+			<p>Название товара</p>
+			<input type="text">
+			<p>Категория товара</p>
+			<select>
+				<option value="Картон">Картон</option>
+				<option value="Бумага">Бумага</option>
+			</select>
+			<p>Описание</p>
+			<textarea rows="4"></textarea>
+			<p>Таблица характеристик</p>
+			<input type="text" placeholder="?">
+			<p>Цена за 1 шт.</p>
+			<input type="text">
+			<p>Изображение</p>
+			<div class="current flx">
+				<img src="images/prod.jpg">
+				<img src="images/delete.svg" class="delete">
+				<label>
+					<input type="file">
+					<span class="btn">Выберите файл</span>
+				</label>
+			</div>
+			
+		</form>
+	</div>
+</div>	
+<div class="popup_box" id="delete_category">
+	<div class="popup">
+		<div class="close_popup bgi"></div>
+		<h2>Вы действительно хотите удалить категорию</h2>
+		<p>После удаления категории, товары которые были в категории останутся и автоматически перенесуться в раздел "без категории"</p>
+		<div class="btns_box flx">
+			<div class="btn add">Да</div>
+			<div class="btn">Нет</div>
+		</div>
+	</div>
+</div>
+<script src="js/main.js"></script>
+</body>
+</html>
