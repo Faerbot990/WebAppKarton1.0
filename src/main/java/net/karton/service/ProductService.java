@@ -1,0 +1,21 @@
+package net.karton.service;
+
+import net.karton.model.Product;
+
+import java.util.List;
+
+public interface ProductService {
+    Product getOne(Long id);
+    List<Product> findAll();
+    List<Product> filter(List<String> productName,List<String> category, List<Integer> prices);
+    List<Product> findByProductOrderByPriceDesc(String product);
+    List<Product> findByProductOrderByCategoryDesc(String product);
+    void saveProductInfoById(String productName,
+                             String category,
+                             String description,
+                             String filename,
+                             Integer price,
+                             String quantity,
+                             Long id);
+    Product save(Product product);
+}
