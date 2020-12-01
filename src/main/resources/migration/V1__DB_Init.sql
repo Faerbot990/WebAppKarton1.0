@@ -66,6 +66,6 @@ alter table if exists user_product_list
     add constraint FK1n7n8prjoexkp1twc9f6kgbtm
     foreign key (product_list_id) references product;
 
-alter table if exists usr_product_list
+alter table if exists user_product_list
     add constraint FKc5b4lo20noteewtlrq1kd8nhs
     foreign key (user_id) references user;
