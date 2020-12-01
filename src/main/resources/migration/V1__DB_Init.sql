@@ -39,6 +39,12 @@ create table user_product_list (
     user_id int8 not null,
     product_list_id int8 not null
 );
+create table news (
+    id int8 not null,
+    description varchar(255),
+    filename varchar(255),
+    primary key (id)
+);
 
 alter table if exists orders
     add constraint FK7ncuqw9n77odylknbo8aikc9w
