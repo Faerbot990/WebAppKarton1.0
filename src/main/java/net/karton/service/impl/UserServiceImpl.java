@@ -1,7 +1,7 @@
 package net.karton.service.impl;
 
 
-import net.karton.model.Role;
+
 import net.karton.model.User;
 import net.karton.repository.UserRepository;
 import net.karton.service.UserService;
@@ -14,11 +14,9 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.util.Arrays;
+
 import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.stream.Collectors;
+
 
 @Service("userDetailServiceImpl")
 public class UserServiceImpl  implements UserDetailsService, UserService {
@@ -42,24 +40,6 @@ public class UserServiceImpl  implements UserDetailsService, UserService {
     @Override
     public List<User> findAll() {
         return userRepository.findAll();
-    }
-
-    @Override
-    public void userSave(String username, Map<String, String> form, User user) {
-        user.setUsername(username);
-        Set<String> roles = Arrays.stream(Role.values())
-                .map(Role::name)
-                .collect(Collectors.toSet());
-
-        user.getRoles().clear();
-
-        for (String key : form.keySet()) {
-            if (roles.contains(key)){
-                user.getRoles().add(Role.valueOf(key));
-            }
-        }
-        userRepository.save(user);
-
     }
 
 

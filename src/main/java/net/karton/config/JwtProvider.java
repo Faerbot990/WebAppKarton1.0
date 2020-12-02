@@ -20,7 +20,7 @@ import java.util.Date;
 @Component
 public class JwtProvider {
 
-    private final UserDetailsService userDetailsService;
+    private final UserDetailsService userDetailsService ;
 
     @Value("$(jwt.header)")
     private String authorizationHeader;
@@ -30,7 +30,7 @@ public class JwtProvider {
     private long validityInMilliseconds;
 
     @Autowired
-    public JwtProvider(Qualifier("userDelaisServiceImpl") UserDetailService userDetailService){
+    public JwtProvider(@Qualifier ("userDetailsServiceImpl") UserDetailsService userDetailsService){
         this.userDetailsService = userDetailsService;
     }
     @PostConstruct

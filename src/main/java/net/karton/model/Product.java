@@ -10,7 +10,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 @Entity
-@Table(name = "erders")
+@Table(name = "orders")
 @Getter
 @Setter
 @NoArgsConstructor

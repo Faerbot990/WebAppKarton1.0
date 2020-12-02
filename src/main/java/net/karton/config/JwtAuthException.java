@@ -17,4 +17,8 @@ public class JwtAuthException extends AuthenticationException {
         super(msg);
         this.httpStatus = httpStatus;
     }
+
+    public SuppressWarnings getHttpStatus() {
+        return null;
+    }
 }

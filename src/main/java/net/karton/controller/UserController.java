@@ -1,6 +1,6 @@
 package net.karton.controller;
 
-import net.karton.dto.UserDto;
+
 import net.karton.model.Order;
 import net.karton.model.User;
 import net.karton.service.OrderService;
@@ -32,19 +32,11 @@ public class UserController {
         return new ResponseEntity<>(user, HttpStatus.OK);
     }
 
-    @PutMapping("/user/edit")
-    public ResponseEntity<?> updateUserInfo(
-            @AuthenticationPrincipal User userSession,
-            @RequestBody UserDto request
-    ) {
-        userService.updateProfile(userSession, request.getPassword());
 
-        return new ResponseEntity<>(HttpStatus.OK);
-    }
 
     @GetMapping("/user/orders")
     public ResponseEntity<?> getAllUserOrders(@AuthenticationPrincipal User userSession) {
-        User user = userService.findByEmail(userSession.getUsername());
+        User user = userService.findByUsername(userSession.getUsername());
         List<Order> orders = orderService.findOrderByUser(user);
 
         return new ResponseEntity<>(orders, HttpStatus.OK);

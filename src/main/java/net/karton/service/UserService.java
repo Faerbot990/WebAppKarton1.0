@@ -10,9 +10,6 @@ public interface UserService {
 
     List<User> findAll();
 
-    void userSave(String username, Map<String, String> form, User user);
-
-
     User findByUsername(String username);
 
     User save(User user);

@@ -1,22 +1,16 @@
 package net.karton.controller;
 
-import com.fasterxml.jackson.annotation.JsonView;
 
-import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.Authorization;
-import lombok.RequiredArgsConstructor;
 import net.karton.model.Order;
 import net.karton.model.Product;
 import net.karton.model.User;
 import net.karton.service.OrderService;
 import net.karton.service.ProductService;
 import net.karton.service.UserService;
-import org.glassfish.jersey.internal.util.collection.Views;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
@@ -69,7 +63,7 @@ public class AdminController {
         }
     }
 
-    @PostMapping("/admin/edit")
+    @PostMapping("/admin/update_prod")
     public ResponseEntity<?> updateProduct(
             @Valid Product product,
             BindingResult bindingResult,
@@ -116,16 +110,6 @@ public class AdminController {
         return new ResponseEntity<>(users, HttpStatus.OK);
     }
 
-    @PutMapping("/admin/user/edit")
-    public ResponseEntity<?> updateUser(
-            @RequestParam String username,
-            @RequestParam Map<String, String> form,
-            @RequestParam("userId") User user
-    ) {
-        userService.userSave(username, form, user);
-
-        return new ResponseEntity<>(HttpStatus.OK);
-    }
 
     private void saveFile(Product product, @RequestParam("file") MultipartFile file) throws IOException {
         if (file == null) {
