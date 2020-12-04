@@ -17,15 +17,16 @@
 		<div class="menu">
 			<span data-id="prods" class="active">Товары</span>
 			<span data-id="categories">Категории</span>
+			<span data-id="posts">Блог</span>
 			<span data-id="orders">Заказы</span>
 			<span data-id="settings">Настройки</span>
 		</div>
 	</div>
-	<div class="adm_content" data-id="prods">
+	<div class="adm_content active" data-id="prods">
 		<h2>Товары:</h2>
 		<div class="prod_head_wrap flx">
 			<div class="wrap">
-				<a href="/"><div class="btn add">Добавить товар</div></a>
+				<span class="btn add change_window" data-id="add_prods">Добавить товар</span>
 				<span class="btn">Удалить</span>
 			</div>
 			<form>
@@ -46,7 +47,7 @@
 						<td>Изображение</td>
 						<td>Название товара</td>
 						<td>Цена</td>
-						<td>Категории</td>
+						<td>Категория</td>
 						<td>Дата</td>
 						<td></td>
 					</tr>
@@ -243,6 +244,63 @@
 			</div>
 		</div>
 	</div>
+	<div class="adm_content" data-id="posts">
+		<h2>Посты:</h2>
+		<div class="prod_head_wrap flx">
+			<div class="wrap">
+				<span class="btn add change_window" data-id="add_posts">Добавить пост</span>
+				<span class="btn">Удалить</span>
+			</div>
+		</div>
+		<table>
+			<thead>
+				<tr>
+					<td>
+						<label>
+							<input type="checkbox">
+							<span></span>
+						</label>
+					</td>
+					<td>Изображение</td>
+					<td>Название поста</td>
+					<td>Описание</td>
+					<td>Дата</td>
+					<td></td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						<label>
+							<input type="checkbox">
+							<span></span>
+						</label>
+					</td>
+					<td>
+						<img src="images/prod.jpg" class="prod_img">
+					</td>
+					<td>Какой картон лучше?</td>
+					<td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
+					<td>20.11.20</td>
+					<td>
+						<img src="images/delete.svg">
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="pagination flx">
+			<div class="item active">1</div>
+			<div class="item">2</div>
+			<div class="item">3</div>
+			...
+			<div class="item">50</div>
+		</div>
+	</div>
 	<div class="adm_content" data-id="categories">
 		<h2>Категории товаров:</h2>
 		<div class="categories_box flx">
@@ -260,16 +318,9 @@
 				</form>
 			</div>
 			<div class="categories_list">
-				<div class="btn delete_category">Удалить категорию</div>
 				<table>
 					<thead>
 						<tr>
-							<td>
-								<label>
-									<input type="checkbox">
-									<span></span>
-								</label>
-							</td>
 							<td>Название категории</td>
 							<td>Количество товаров</td>
 							<td></td>
@@ -277,12 +328,6 @@
 					</thead>
 					<tbody>
 						<tr>
-							<td>
-								<label>
-									<input type="checkbox">
-									<span></span>
-								</label>
-							</td>
 							<td>Бумажные пакеты</td>
 							<td>10</td>
 							<td>
@@ -290,12 +335,6 @@
 							</td>
 						</tr>
 						<tr>
-							<td>
-								<label>
-									<input type="checkbox">
-									<span></span>
-								</label>
-							</td>
 							<td>Бумажные пакеты</td>
 							<td>10</td>
 							<td>
@@ -303,12 +342,6 @@
 							</td>
 						</tr>
 						<tr>
-							<td>
-								<label>
-									<input type="checkbox">
-									<span></span>
-								</label>
-							</td>
 							<td>Бумажные пакеты</td>
 							<td>10</td>
 							<td>
@@ -316,12 +349,6 @@
 							</td>
 						</tr>
 						<tr>
-							<td>
-								<label>
-									<input type="checkbox">
-									<span></span>
-								</label>
-							</td>
 							<td>Бумажные пакеты</td>
 							<td>10</td>
 							<td>
@@ -329,12 +356,6 @@
 							</td>
 						</tr>
 						<tr>
-							<td>
-								<label>
-									<input type="checkbox">
-									<span></span>
-								</label>
-							</td>
 							<td>Бумажные пакеты</td>
 							<td>10</td>
 							<td>
@@ -457,63 +478,43 @@
 		</div>
 	</div>
 	<div class="adm_content" data-id="settings">
-		<h2>Настройки пользователей:</h2>
-		<table class="settings_table">
-			<thead>
-				<tr>
-					<td>
-						<label>
-							<input type="checkbox">
-							<span></span>
-						</label>
-					</td>
-					<td>пользователь</td>
-					<td>роль</td>
-					<td>логин</td>
-					<td>пароль</td>
-					<td></td>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td>
-						<label>
-							<input type="checkbox">
-							<span></span>
-						</label>
-					</td>
-					<td>Samkovsky</td>
-					<td>менеджер по продажам</td>
-					<td>samkovsky</td>
-					<td>***********</td>
-					<td>
-						<img src="images/delete.svg">
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<label>
-							<input type="checkbox">
-							<span></span>
-						</label>
-					</td>
-					<td>Samkovsky</td>
-					<td>менеджер по контенту</td>
-					<td>samkovsky</td>
-					<td>***********</td>
-					<td>
-						<img src="images/delete.svg">
-					</td>
-				</tr>
-			</tbody>
-		</table>
+		<h2>Настройки админки:</h2>
+		<p>Текущий логин админа</p>
+		<input type="text" name="admin_login">
+		<p>Текущий пароль админа</p>
+		<input type="text" name="admin_pass">
+		<div class="btn add">Сохранить доступы</div>
 		<h2>Настройки для телеграмм:</h2>
+		<p>Ключ к телеграмм каналу</p>
+		<input type="text" name="tg_key">
+		<p>Скрипт для телеграмм канала</p>
+		<input type="text" name="tg_script">
 		<h2>Почта для получения заказов:</h2>
+		<p>Текущая почта куда приходят заказы</p>
+		<input type="text" name="admin_email">
 	</div>
-	<div class="adm_content active" data-id="prod_page">
-		<h2>Добавление/редактирование товара:</h2>
+	<div class="adm_content" data-id="add_posts">
+		<h2>Добавление/редактирование поста для блога:</h2>
 		<form>
 			<button class="btn add">Добавить/Изменить</button>
+			<p>Название поста</p>
+			<input type="text">
+			<p>Описание поста</p>
+			<textarea rows="4"></textarea>
+			<p>Изображение для поста</p>
+			<div class="current flx">
+				<img src="images/prod.jpg">
+				<img src="images/delete.svg" class="delete">
+				<label>
+					<input type="file">
+					<span class="btn">Выберите файл</span>
+				</label>
+			</div>
+		</form>
+	</div>
+	<div class="adm_content" data-id="add_prods">
+		<h2>Добавление/редактирование товара:</h2>
+		<form>
 			<p>Название товара</p>
 			<input type="text">
 			<p>Категория товара</p>
@@ -536,7 +537,7 @@
 					<span class="btn">Выберите файл</span>
 				</label>
 			</div>
-			
+			<button class="btn add">Добавить/Изменить</button>
 		</form>
 	</div>
 </div>	
