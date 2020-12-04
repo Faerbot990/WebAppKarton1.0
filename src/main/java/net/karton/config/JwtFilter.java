@@ -20,7 +20,8 @@ import java.io.IOException;
 public class JwtFilter extends GenericFilterBean {
 
     private final JwtProvider jwtProvider;
-@Autowired
+
+    @Autowired
     public JwtFilter(JwtProvider jwtProvider) {
         this.jwtProvider = jwtProvider;
     }
@@ -28,19 +29,6 @@ public class JwtFilter extends GenericFilterBean {
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         String token = jwtProvider.resolveToken((HttpServletRequest) servletRequest);
 
-        try {
-            if (token != null && jwtProvider.validateToken(token)) {
-                Authentication authentication = jwtProvider.getAuthentication(token);
-                if (authentication != null) {
-                    SecurityContextHolder.getContext().setAuthentication(authentication);
-                }
-            }
-        }catch (JwtAuthException e){
-            SecurityContextHolder.clearContext();
-            ((HttpServletResponse) servletResponse).sendError(e.getHttpStatus().value());
-            throw new JwtAuthException("JWT token invalid");
-        }
-        filterChain.doFilter(servletRequest, servletResponse);
-    }
 
+    }
 }
