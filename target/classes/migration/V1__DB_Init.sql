@@ -29,7 +29,7 @@ create table user_role (
     user_id int8 not null,
     roles varchar(255)
 );
-create table user (
+create table usr (
     id int8 not null,
     password varchar(255) not null,
     username varchar(255) not null,
@@ -43,29 +43,6 @@ create table news (
     id int8 not null,
     description varchar(255),
     filename varchar(255),
+    title varchar (255),
     primary key (id)
 );
-
-alter table if exists orders
-    add constraint FK7ncuqw9n77odylknbo8aikc9w
-    foreign key (user_id) references user;
-
-alter table if exists orders_product_list
-    add constraint FKi6hpa14qaenek8pc9pf3vmlei
-    foreign key (product_list_id) references product;
-
-alter table if exists orders_product_list
-    add constraint FK8jft4d30d5dgvauht7ssndwau
-    foreign key (order_id) references orders;
-
-alter table if exists user_role
-    add constraint FKfpm8swft53ulq2hl11yplpr5
-    foreign key (user_id) references user;
-
-alter table if exists user_product_list
-    add constraint FK1n7n8prjoexkp1twc9f6kgbtm
-    foreign key (product_list_id) references product;
-
-alter table if exists user_product_list
-    add constraint FKc5b4lo20noteewtlrq1kd8nhs
-    foreign key (user_id) references user;
