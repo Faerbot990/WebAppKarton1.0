@@ -43,6 +43,7 @@ create table news (
     id int8 not null,
     description varchar(255),
     filename varchar(255),
+    title varchar (255),
     primary key (id)
 );
 
