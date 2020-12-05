@@ -46,17 +46,16 @@ public class AuthController {
     @PostMapping("/login")
     public ResponseEntity<?> authenticate(@RequestBody UserDto userDto) {
         try {
-            authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(reqest.getUsername(), request.getPassword()));
-            User user =  userService.findByUsername(request.getUsername());
-            String userRole = user.getRoles().iterator().next().name();
-            String token = jwtProvider.createToken(request.getUsername(), userRole);
-            List<Product> productList = user.getProductList();
+            String username = userDto.getUsername();
+            String password = userDto.getPassword();
+            authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(username,password));
+            User user =  userService.findByUsername(username);
+
+            String token = jwtProvider.createToken(userDto.getUsername(),password);
 
             Map<Object, Object> response = new HashMap<>();
-            response.put("username", request.getUsername);
+            response.put("username", username);
             response.put("token", token);
-            response.put("userRole", userRole);
-            response.put("productList", productList);
 
             return new  ResponseEntity<>(response,HttpStatus.OK);
         } catch (AuthenticationException e) {

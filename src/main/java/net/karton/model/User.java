@@ -74,7 +74,7 @@ public class User implements UserDetails {
         return getRoles();
     }
 
-    private Collection<? extends GrantedAuthority> getRoles() {
+    public Collection<? extends GrantedAuthority> getRoles() {
         return getRoles();
     }
 
