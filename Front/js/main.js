@@ -6,9 +6,6 @@
 
 
 $(document).ready(function () {
-	var scene = document.getElementById('scene');
-	var parallaxInstance = new Parallax(scene);
-
 	$('.menu span, .change_window').on('click', function(){
 		var id = $(this).attr('data-id');
 		$('.menu span').removeClass('active');
@@ -26,6 +23,11 @@ $(document).ready(function () {
 		$('.popup_box#delete_category').fadeIn(300);
 	});
 
+	$('.burger, .overlay').click(function(){
+	  $('.burger').toggleClass('clicked');
+	  $('nav.menu').fadeToggle(300);
+	});
+
 	$('.search_box button').on('click', function(e){
 		var search = $('.search_box input').val();
 		$('.search_box input').fadeToggle(300);
@@ -34,7 +36,28 @@ $(document).ready(function () {
 		} else{
 			console.log('empty');
 			e.preventDefault();
-			
 		}
+	});
+
+	$('.send_form').on('submit', function(){
+		var data = {};
+		var url = $(this).attr('action');
+		$(this).find('[name]').each(function(index, value){
+			var name = $(this).attr('name'),
+			value = $(this).val();
+			data[name] = value;
+		});
+		$.ajax({
+			url: url,
+			type: 'post',
+			data: data,
+			success: function(){
+				
+			},
+			error: function (xhr, str) {
+				alert('Возникла ошибка: ' + xhr.responseCode);
+			}
+		});
+		return false;
 	});
 });
