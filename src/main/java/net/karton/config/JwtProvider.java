@@ -30,8 +30,9 @@ public class JwtProvider {
     private long validityInMilliseconds;
 
     @Autowired
-    public JwtProvider(@Qualifier ("userDetailsServiceImpl") UserDetailsService userDetailsService){
+    public JwtProvider(@Qualifier("userDetailsServiceImpl") UserDetailsService userDetailsService){
         this.userDetailsService = userDetailsService;
+
     }
     @PostConstruct
     protected void init() {
