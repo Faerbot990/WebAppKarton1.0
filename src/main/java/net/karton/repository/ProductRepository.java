@@ -23,7 +23,7 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
     @Modifying
     @Transactional
     @Query("update Product p set p.productName = ?1, p.productCategory = ?2, p.quantity = ?3, p.price = ?4, " +
-            "p.description = ?5, p.filename = ?6 where p.id = ?7")
+            "p.productDescription = ?5, p.filename = ?6 where p.id = ?7")
 
     void saveProductInfoById(String productName,
                              String productCategory,

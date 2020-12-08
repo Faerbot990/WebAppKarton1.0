@@ -35,8 +35,6 @@ public class CartController {
         User user = userService.findByUsername(userSession.getUsername());
         user.getProductList().add(product);
 
-        userService.save(user);
-
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
@@ -45,7 +43,7 @@ public class CartController {
         User user = userService.findByUsername(userSession.getUsername());
         user.getProductList().add(product);
 
-        userService.save(user);
+
 
         List<Product> productList = user.getProductList();
 
