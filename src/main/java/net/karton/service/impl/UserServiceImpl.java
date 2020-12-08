@@ -28,7 +28,7 @@ public class UserServiceImpl  implements UserDetailsService, UserService {
     private String hostname;
 
     @Autowired
-    public UserServiceImpl(UserRepository userRepository, PasswordEncoder passwordEncoder) {
+    public UserServiceImpl(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
 

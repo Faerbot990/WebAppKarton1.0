@@ -15,9 +15,37 @@ import javax.validation.constraints.NotNull;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode(of ={"id", "productName","poductCategory", "productDescription", "price" })
+@EqualsAndHashCode(of ={"id", "productName","productCategory", "productDescription", "price" })
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Product {
+    public Long getId() {
+        return id;
+    }
+
+    public String getProductName() {
+        return productName;
+    }
+
+    public String getProductCategory() {
+        return productCategory;
+    }
+
+    public String getProductDescription() {
+        return productDescription;
+    }
+
+    public String getFilename() {
+        return filename;
+    }
+
+    public Integer getPrice() {
+        return price;
+    }
+
+    public String getQuantity() {
+        return quantity;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -30,9 +58,13 @@ public class Product {
     @Length(max = 255)
     private String productCategory;
 
-    private String description;
+    private String productDescription;
     /**файл изображеня*/
     private String filename;
+
+    public void setFilename(String filename) {
+        this.filename = filename;
+    }
 
     @NotNull(message = "")
     private Integer price;

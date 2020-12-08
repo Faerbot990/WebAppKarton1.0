@@ -34,7 +34,7 @@ public class JwtProvider {
         this.userDetailsService = userDetailsService;
     }
     @PostConstruct
-    protected void init(){
+    protected void init() {
         secretKey = Base64.getEncoder().encodeToString(secretKey.getBytes());
     }
 
@@ -42,22 +42,24 @@ public class JwtProvider {
         Claims claims = Jwts.claims().setSubject(username);
         claims.put("role", role);
         Date now = new Date();
-        Date validator = new Date(now.getTime() + validityInMilliseconds * 1000);
+        Date validity = new Date(now.getTime() + validityInMilliseconds * 1000);
 
         return Jwts.builder()
                 .setClaims(claims)
                 .setIssuedAt(now)
-                .setExpiration(validator)
-                .signWith(SignatureAlgorithm.ES256, secretKey)
+                .setExpiration(validity)
+                .signWith(SignatureAlgorithm.HS256, secretKey)
                 .compact();
     }
 
+
     public boolean validateToken(String token) throws JwtAuthException {
+
         try {
             Jws<Claims> claimsJws = Jwts.parser().setSigningKey(secretKey).parseClaimsJws(token);
 
             return !claimsJws.getBody().getExpiration().before(new Date());
-        } catch (IllegalArgumentException e) {
+        } catch (JwtException | IllegalArgumentException exception) {
             throw new JwtAuthException("JWT token is expired or invalid", HttpStatus.UNAUTHORIZED);
         }
     }

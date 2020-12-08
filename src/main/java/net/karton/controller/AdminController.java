@@ -78,7 +78,7 @@ public class AdminController {
 
             productService.saveProductInfoById(product.getProductName(),
                     product.getProductCategory(),
-                    product.getDescription(),
+                    product.getProductDescription(),
                     product.getFilename(),
                     product.getPrice(),
                     product.getQuantity(),
