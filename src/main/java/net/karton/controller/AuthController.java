@@ -1,10 +1,8 @@
 package net.karton.controller;
 
 
-import lombok.RequiredArgsConstructor;
 import net.karton.config.JwtProvider;
 import net.karton.dto.UserDto;
-import net.karton.model.Product;
 import net.karton.model.User;
 import net.karton.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +21,6 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 @RestController
