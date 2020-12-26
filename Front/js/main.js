@@ -39,25 +39,51 @@ $(document).ready(function () {
 		}
 	});
 
-	$('.send_form').on('submit', function(){
+//data
 		var data = {};
+		var type = $(this).attr('data-type');
 		var url = $(this).attr('action');
 		$(this).find('[name]').each(function(index, value){
 			var name = $(this).attr('name'),
 			value = $(this).val();
 			data[name] = value;
 		});
-		$.ajax({
-			url: url,
-			type: 'post',
-			data: data,
-			success: function(){
+
+//callback function
+var handle_login = function (json){
+	if(json.result == "OK")
+	$("#login").text("okay");
+
+	if(json.result == "BAD")
+	$("#login").text("bad");
+}
+
+//form
+var form = $('.send_form');
+
+	ajax_request(handle_login, data, url, form);
+
+	// $('.send_form').on('submit', function(e){
+	// 	e.preventDefault();
+	// 	var data = {};
+	// 	var type = $(this).attr('data-type');
+	// 	var url = $(this).attr('action');
+	// 	$(this).find('[name]').each(function(index, value){
+	// 		var name = $(this).attr('name'),
+	// 		value = $(this).val();
+	// 		data[name] = value;
+	// 	});
+	// 	$.ajax({
+	// 		url: url,
+	// 		type: 'post',
+	// 		data: data,
+	// 		success: function(json){
 				
-			},
-			error: function (xhr, str) {
-				alert('Возникла ошибка: ' + xhr.responseCode);
-			}
-		});
-		return false;
-	});
+	// 		},
+	// 		error: function (xhr, str) {
+	// 			alert('Возникла ошибка: ' + xhr.responseCode);
+	// 		}
+	// 	});
+	// 	return false;
+	// });
 });
